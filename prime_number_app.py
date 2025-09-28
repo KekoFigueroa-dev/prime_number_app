@@ -23,9 +23,8 @@ while is_running:
         print("Invalid input. Please enter a positive integer.")
         number = input("Enter a positive integer to check if it's prime: ")
     number = int(number)
-    
 
-    # 5. If user chooses option a:
+    # If user chooses option a:
     if choice == "a":
         is_prime = True
         for i in range(2, number):
@@ -36,18 +35,30 @@ while is_running:
             print(f"{number} is a prime number!")
         else:
             print(f"{number} is not a prime number.")
-            
-        # a. Get lower and upper bounds
-        # b. Start timing calculation
-        # c. Loop through range and check each number for primality
-        # d. Add primes to list
-        # e. End timing and calculate elapsed time
-        # f. Print time taken and all found primes
-    
-    # 6. Elif user chooses option 2: 
-
-    # 7. Else: invalid option
-        # a. Print invalid choice message
+    # Elif user chooses option b: 
+    elif choice == "b":
+        primes = []
+        for prime_candidate in range(2, number):
+            is_prime = True
+            for i in range(2, prime_candidate):
+                if prime_candidate % i == 0:
+                    is_prime = False
+                    break
+            if is_prime:
+                primes.append(prime_candidate)
+        print(f"All prime numbers between 2 and {number} :")
+        for prime in primes:
+            print(prime, end=", ")
+        print()  
+    #Else: invalid option
+    else:
+        print("Invalid option. Please choose 'a' or 'b'.")
 
     # 8. Ask user if they want to run again
+    run_again = input("Would you like to run the program again? (y/n): ").lower()
+    if run_again == 'y':
+        is_running = True
     # 9. If not, set flag to False and print goodbye message
+    else:
+        is_running = False
+        print("Thank you for using the Prime Number Finder. Goodbye!")
