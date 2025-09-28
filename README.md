@@ -1,7 +1,7 @@
 # Prime Number App
 
 A Python app to check if a number is prime or list all primes in a given range.  
-Includes timing for range calculations so you can see how efficient your code is.
+Includes timing for range calculations so you can see how efficient the code is.
 
 ## Features
 
